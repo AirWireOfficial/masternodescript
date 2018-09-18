@@ -4,4 +4,4 @@
 
 ## Paste this entire command on one line as root or someone with sudo access.
 
->wget https://cdn.rawgit.com/Social-Wallet-Inc/masternodescript/master/wiremasternodescript.sh && chmod +x ./wiremasternodescript.sh && ./wiremasternodescript.sh && source ~/.bash_aliases
+>wget https://cdn.rawgit.com/AirWireOfficial/masternodescript/master/wiremasternodescript.sh && chmod +x ./wiremasternodescript.sh && ./wiremasternodescript.sh && source ~/.bash_aliases
