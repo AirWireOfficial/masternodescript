@@ -2,7 +2,7 @@
 
 # This script was made by Aron Schatz. It is heavily inspired by Galactrum.
 
-# Run it: wget https://cdn.rawgit.com/Social-Wallet-Inc/masternodescript/master/wiremasternodescript.sh && chmod +x ./wiremasternodescript.sh && ./wiremasternodescript.sh && source ~/.bash_aliases
+# Run it: wget https://cdn.rawgit.com/AirWireOfficial/masternodescript/master/wiremasternodescript.sh && chmod +x ./wiremasternodescript.sh && ./wiremasternodescript.sh && source ~/.bash_aliases
 
 # This script creates swap space, downloads all required packages, creates a masternode user, downloads the 
 # WIRE source and compiles. It then moves the binary to a system wide folder and installs a systemd script to have it autostart on boot. Aliases are created to always use the same conf directory. Use wire-cli to interact with the client.
