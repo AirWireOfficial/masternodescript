@@ -10,7 +10,7 @@
 clear
 cd ~
 echo "**********************************************************************"
-echo "* Ubuntu 16.04 is the required opearting system for this install.    *"
+echo "* Ubuntu 18.04 is the required opearting system for this install.    *"
 echo "*                                                                    *"
 echo "* WIRE script based masternode installation.                         *"
 echo "*                                                                    *"
@@ -30,7 +30,7 @@ echo && echo && echo
 sleep 1
 
 # Check for systemd
-systemctl --version >/dev/null 2>&1 || { echo "systemd is required. Are you using Ubuntu 16.04?"  >&2; exit 1; }
+systemctl --version >/dev/null 2>&1 || { echo "systemd is required. Are you using Ubuntu 18.04?"  >&2; exit 1; }
 
 # Gather input from user
 read -e -p "Enter Masternode Private Key (e.g. 87PUDuUHk114BW46LLtCn2wWUKyVSCt23rmEQsqTYvJqQjTZtaz) : " key
@@ -90,7 +90,7 @@ sudo apt-get -y update
 # Install required packages
 echo && echo "Installing base packages..."
 sleep 1
-sudo apt-get -y install git libevent-dev libboost-dev libboost-chrono-dev libboost-filesystem-dev libboost-program-options-dev libboost-system-dev libboost-test-dev libboost-thread-dev libdb4.8-dev libdb4.8++-dev libminiupnpc-dev virtualenv python-pip dh-autoreconf pkg-config build-essential libssl-dev libzmq3-dev libgmp3-dev libminiupnpc-dev ufw
+sudo apt-get -y install git libevent-dev libboost-dev libboost-chrono-dev libboost-filesystem-dev libboost-program-options-dev libboost-system-dev libboost-test-dev libboost-thread-dev libdb4.8-dev libdb4.8++-dev libminiupnpc-dev virtualenv python-pip dh-autoreconf pkg-config build-essential libssl1.0-dev libzmq3-dev libgmp3-dev libminiupnpc-dev ufw
 sleep 1
 
 # Configure Firewall
@@ -108,7 +108,7 @@ echo && echo "Firewall installed and enabled!"
 # Download WIRE
 echo && echo "Downloading latest WIRE source and compiling..."
 sleep 1
-git clone https://github.com/Social-Wallet-Inc/wire-core.git
+git clone https://github.com/AirWireOfficial/wire-core.git
 cd wire-core
 ./autogen.sh
 ./configure
