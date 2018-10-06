@@ -90,7 +90,7 @@ sudo apt-get -y update
 # Install required packages
 echo && echo "Installing base packages..."
 sleep 1
-sudo DEBIAN_FRONTEND=noninteractive apt-get -yq install git libevent-dev libboost-dev libboost-chrono-dev libboost-filesystem-dev libboost-program-options-dev libboost-system-dev libboost-test-dev libboost-thread-dev libdb4.8-dev libdb4.8++-dev libminiupnpc-dev virtualenv python-pip dh-autoreconf pkg-config build-essential libssl1.0-dev libzmq3-dev libgmp3-dev libminiupnpc-dev ufw
+sudo DEBIAN_FRONTEND=noninteractive apt-get -o DPkg::Options::=--force-confdef -y -q install git libevent-dev libboost-dev libboost-chrono-dev libboost-filesystem-dev libboost-program-options-dev libboost-system-dev libboost-test-dev libboost-thread-dev libdb4.8-dev libdb4.8++-dev libminiupnpc-dev virtualenv python-pip dh-autoreconf pkg-config build-essential libssl1.0-dev libzmq3-dev libgmp3-dev libminiupnpc-dev ufw
 sleep 1
 
 # Configure Firewall
