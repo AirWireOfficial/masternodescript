@@ -78,7 +78,7 @@ sudo useradd -m -g masternode masternode
 echo && echo "Upgrading system..."
 sleep 1
 sudo apt-get -y update
-sudo apt-get DEBIAN_FRONTEND=noninteractive apt-get -o DPkg::Options::=--force-confdef -y upgrade
+sudo DEBIAN_FRONTEND=noninteractive apt-get -o DPkg::Options::=--force-confdef -y upgrade
 
 # Add Berkely PPA
 echo && echo "Installing bitcoin PPA..."
@@ -211,3 +211,7 @@ echo && echo "Wait until the blockchain syncs before starting your masternode fr
 
 
 source ~/.bash_aliases
+
+echo && echo "The system will now reboot in order to finish any package updates that need a restart. Press enter to restart."
+read -e -p "Reboot Now." add_swap
+sudo reboot
