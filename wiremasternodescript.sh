@@ -67,8 +67,11 @@ fi
 
 if [[ ($(lsb_release -d) == *16.04*) ]]; then
     UVER=16;
+    echo "Detected Ubuntu 16.04..."    
+else
+    echo "Detected Ubuntu 18.04..."
 fi
-
+echo
 sleep 1
 
 # Check for systemd
