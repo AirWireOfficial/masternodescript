@@ -61,7 +61,7 @@ echo && echo && echo
 
 #Check LSB release
 if [[ !($(lsb_release -d) == *16.04* || $(lsb_release -d) == *18.04*) ]]; then
-    echo "${RED}This operating system is not Ubuntu 16.04 or 18.04. Aborting.${NC}"
+    echo -e "${RED}This operating system is not Ubuntu 16.04 or 18.04. Aborting.${NC}"
     exit 1
 fi
 
@@ -267,8 +267,15 @@ echo && echo "Wait until the blockchain syncs before starting your masternode fr
 
 
 source ~/.bash_aliases
-sleep 3
+sleep 1
 
 echo && echo "The system will now reboot in order to finish any package updates that need a restart. Press enter to restart."
 read -e -p "Reboot Now?" rebootn
+
+echo && echo
+
+echo "Rebooting..."
+
+sleep 1
+
 sudo reboot
