@@ -267,7 +267,8 @@ echo && echo "Wait until the blockchain syncs before starting your masternode fr
 
 
 source ~/.bash_aliases
+sleep 3
 
 echo && echo "The system will now reboot in order to finish any package updates that need a restart. Press enter to restart."
-read -e -p "Reboot Now." add_swap
+read -e -p "Reboot Now?" rebootn
 sudo reboot
