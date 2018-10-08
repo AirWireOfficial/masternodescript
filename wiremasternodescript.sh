@@ -19,10 +19,32 @@ RED='\033[0;31m'
 BLUE='\033[0;34m'
 NC='\033[0m'
 
-clear
+
 UVER=18;
 
+clear
 cd ~
+echo "**********************************************************************"
+echo "* Ubuntu 18.04 or 16.04 (x64) is the required opearting system for   *"
+echo "* this install.                                                      *"
+echo "*                                                                    *"
+echo "* WIRE script based masternode installation.                         *"
+echo "*                                                                    *"
+echo "* Need help? Join the WIRE Discord: https://discord.gg/2482aX        *"
+echo "*                                                                    *"
+echo "* Root or sudo access is required for installation!                  *"
+echo "*                                                                    *"
+echo "*                                             Created by Aron Schatz *"
+echo "**********************************************************************"
+echo && echo && echo
+
+echo "Setting up initial environment..."
+
+sudo apt-get -y -qq update
+sudo apt-get -y -qq install dnsutils
+
+clear
+
 echo "**********************************************************************"
 echo "* Ubuntu 18.04 or 16.04 (x64) is the required opearting system for   *"
 echo "* this install.                                                      *"
@@ -39,7 +61,7 @@ echo && echo && echo
 
 #Check LSB release
 if [[ !($(lsb_release -d) == *16.04* || $(lsb_release -d) == *18.04*) ]]; then
-    echo "${RED}This operating system is not Ubuntu 16.04 or 18.04. Aborting."
+    echo "${RED}This operating system is not Ubuntu 16.04 or 18.04. Aborting.${NC}"
     exit 1
 fi
 
@@ -50,7 +72,7 @@ fi
 sleep 1
 
 # Check for systemd
-systemctl --version >/dev/null 2>&1 || { echo "systemd is required. Are you using Ubuntu 18.04?"  >&2; exit 1; }
+systemctl --version >/dev/null 2>&1 || { echo "systemd is required. Are you using Ubuntu 18.04 or 16.04?"  >&2; exit 1; }
 
 # Gather input from user
 read -e -p "Enter Masternode Private Key (e.g. 87PUDuUHk114BW46LLtCn2wWUKyVSCt23rmEQsqTYvJqQjTZtaz) : " key
@@ -60,7 +82,7 @@ if [[ "$key" == "" ]]; then
 fi
 
 
-ip=$(dig +short myip.opendns.com @resolver1.opendns.com)
+ip="$(dig +short myip.opendns.com @resolver1.opendns.com)"
 read -e -p "The script detected this server IP as '${ip}'. Press enter if this is correct or manually enter the correct IP : " ipcheck
 if [[ ! -z $ipcheck ]]; then
     ip=$ipcheck
