@@ -166,7 +166,7 @@ if [[ ("$UVER" == "16") ]]; then
     unzip wire-linux-16.04-1.3.0.0.zip
 else
     wget https://github.com/AirWireOfficial/wire-core/releases/download/1.3.0/wire-ubuntu-18.04.v1.3.tar.gz
-    tar -zxvf ./wire-ubuntu-18.04.v1.3.tar.gz
+    tar -xzvf ./wire-ubuntu-18.04.v1.3.tar.gz
 fi
 
 chmod +x ./wire-cli
