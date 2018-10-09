@@ -128,12 +128,6 @@ fi
 sudo groupadd masternode
 sudo useradd -m -g masternode masternode
 
-# Update system 
-echo && echo "Upgrading system..."
-sleep 1
-sudo apt-get -y update
-sudo DEBIAN_FRONTEND=noninteractive apt-get -o DPkg::Options::=--force-confdef -y upgrade
-
 # Add Berkely PPA
 echo && echo "Installing bitcoin PPA..."
 sleep 1
@@ -146,6 +140,11 @@ echo && echo "Installing base packages..."
 sleep 1
 sudo DEBIAN_FRONTEND=noninteractive apt-get -o DPkg::Options::=--force-confdef -y install git libevent-dev libboost-dev libboost-chrono-dev libboost-filesystem-dev libboost-program-options-dev libboost-system-dev libboost-test-dev libboost-thread-dev libdb4.8-dev libdb4.8++-dev libminiupnpc-dev virtualenv python-pip dh-autoreconf pkg-config build-essential libssl-dev libzmq3-dev libgmp3-dev libminiupnpc-dev ufw unzip
 sleep 1
+
+# Update system 
+echo && echo "Upgrading system..."
+sleep 1
+sudo DEBIAN_FRONTEND=noninteractive apt-get -o DPkg::Options::=--force-confdef -y upgrade
 
 # Configure Firewall
 
@@ -163,11 +162,11 @@ echo && echo "Firewall installed and enabled!"
 echo && echo "Downloading v1.3 WIRE binary and installing"
 sleep 1
 if [[ ("$UVER" == "16") ]]; then
-    wget https://github.com/AirWireOfficial/wire-core/files/2446021/wire-linux-16.04-1.3.0.0.zip
-    unzip wire-linux-16.04-1.3.0.0.zip
+    wget https://github.com/AirWireOfficial/wire-core/releases/download/1.3.0/wire-ubuntu-18.04.v1.3.tar.gz
+    tar -zxvf ./wire-ubuntu-18.04.v1.3.tar.gz
 else
     wget https://github.com/AirWireOfficial/wire-core/files/2446024/wire-linux-18.04-1.3.0.0.zip
-    unzip wire-linux-18.04-1.3.0.0.zip
+    unzip ./wire-linux-18.04-1.3.0.0.zip
 fi
 
 chmod +x ./wire-cli
