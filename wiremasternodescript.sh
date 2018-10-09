@@ -162,11 +162,11 @@ echo && echo "Firewall installed and enabled!"
 echo && echo "Downloading v1.3 WIRE binary and installing"
 sleep 1
 if [[ ("$UVER" == "16") ]]; then
+    wget https://github.com/AirWireOfficial/wire-core/files/2446021/wire-linux-16.04-1.3.0.0.zip
+    unzip wire-linux-16.04-1.3.0.0.zip
+else
     wget https://github.com/AirWireOfficial/wire-core/releases/download/1.3.0/wire-ubuntu-18.04.v1.3.tar.gz
     tar -zxvf ./wire-ubuntu-18.04.v1.3.tar.gz
-else
-    wget https://github.com/AirWireOfficial/wire-core/files/2446024/wire-linux-18.04-1.3.0.0.zip
-    unzip ./wire-linux-18.04-1.3.0.0.zip
 fi
 
 chmod +x ./wire-cli
