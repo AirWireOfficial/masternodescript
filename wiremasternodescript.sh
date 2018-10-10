@@ -34,7 +34,7 @@ echo "* Need help? Join the WIRE Discord: https://discord.gg/2482aX        *"
 echo "*                                                                    *"
 echo "* Root or sudo access is required for installation!                  *"
 echo "*                                                                    *"
-echo "*                                             Created by Aron Schatz *"
+echo "* v1.1                                        Created by Aron Schatz *"
 echo "**********************************************************************"
 echo && echo && echo
 
@@ -55,7 +55,7 @@ echo "* Need help? Join the WIRE Discord: https://discord.gg/2482aX        *"
 echo "*                                                                    *"
 echo "* Root or sudo access is required for installation!                  *"
 echo "*                                                                    *"
-echo "*                                             Created by Aron Schatz *"
+echo "* v1.1                                        Created by Aron Schatz *"
 echo "**********************************************************************"
 echo && echo && echo
 
