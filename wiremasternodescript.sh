@@ -86,6 +86,11 @@ fi
 
 
 ip="$(dig @resolver1.opendns.com ANY myip.opendns.com +short)"
+regex='^([0-9a-fA-F]{0,4}:){1,7}[0-9a-fA-F]{0,4}$'
+
+if [[ $ip =~ $regex ]]; then
+    ip="[$ip]"
+fi
 read -e -p "The script detected this server IP as '${ip}'. Press enter if this is correct or manually enter the correct IP : " ipcheck
 if [[ ! -z $ipcheck ]]; then
     ip=$ipcheck
