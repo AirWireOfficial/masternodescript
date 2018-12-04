@@ -34,7 +34,7 @@ echo "* Need help? Join the WIRE Discord: https://discord.gg/2482aX        *"
 echo "*                                                                    *"
 echo "* Root or sudo access is required for installation!                  *"
 echo "*                                                                    *"
-echo "* v1.1                                        Created by Aron Schatz *"
+echo "* S v1.1  W v1.3                              Created by Aron Schatz *"
 echo "**********************************************************************"
 echo && echo && echo
 
@@ -55,7 +55,7 @@ echo "* Need help? Join the WIRE Discord: https://discord.gg/2482aX        *"
 echo "*                                                                    *"
 echo "* Root or sudo access is required for installation!                  *"
 echo "*                                                                    *"
-echo "* v1.1                                        Created by Aron Schatz *"
+echo "* S v1.1  W v1.3                              Created by Aron Schatz *"
 echo "**********************************************************************"
 echo && echo && echo
 
@@ -85,7 +85,7 @@ if [[ "$key" == "" ]]; then
 fi
 
 
-ip="$(dig +short myip.opendns.com @resolver1.opendns.com)"
+ip="$(dig @resolver1.opendns.com ANY myip.opendns.com +short)"
 read -e -p "The script detected this server IP as '${ip}'. Press enter if this is correct or manually enter the correct IP : " ipcheck
 if [[ ! -z $ipcheck ]]; then
     ip=$ipcheck
