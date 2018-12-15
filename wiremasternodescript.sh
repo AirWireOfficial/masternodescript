@@ -10,6 +10,8 @@
 # This script creates swap space, downloads all required packages, creates a masternode user, and downloads the 
 # WIRE binaries. It then moves the binary to a system wide folder and installs a systemd script to have it autostart on boot. Aliases are created to always use the same conf directory. Use wire-cli to interact with the client.
 
+# Snapshots are now used to speed the initial installation and sync of the blockchain.
+
 clear
 
 #Colors
@@ -34,7 +36,7 @@ echo "* Need help? Join the WIRE Discord: https://discord.gg/2482aX        *"
 echo "*                                                                    *"
 echo "* Root or sudo access is required for installation!                  *"
 echo "*                                                                    *"
-echo "* S v1.1  W v1.3                              Created by Aron Schatz *"
+echo "* S v1.2  W v1.3                              Created by Aron Schatz *"
 echo "**********************************************************************"
 echo && echo && echo
 
@@ -55,7 +57,7 @@ echo "* Need help? Join the WIRE Discord: https://discord.gg/2482aX        *"
 echo "*                                                                    *"
 echo "* Root or sudo access is required for installation!                  *"
 echo "*                                                                    *"
-echo "* S v1.1  W v1.3                              Created by Aron Schatz *"
+echo "* S v1.2  W v1.3                              Created by Aron Schatz *"
 echo "**********************************************************************"
 echo && echo && echo
 
@@ -215,6 +217,16 @@ addnode=176.58.109.69
 addnode=5.79.88.130
 addnode=139.162.73.67
 ' | sudo -E tee /home/masternode/.wire/wire.conf
+
+# Download Snapshot
+echo && echo "Downloading lastest blockchain snapshot"
+
+wget https://github.com/AirWireOfficial/wire-core/releases/download/1.3.0/snapshot.tar.gz
+tar zxvf ./snapshot.tar.gz
+mv ./blocks/ /home/masternode/.wire/
+mv ./chainstate/ /home/masternode/.wire/
+rm ./snapshot.tar.gz
+
 sudo chown -R masternode:masternode /home/masternode/.wire
 
 # Setup systemd service
