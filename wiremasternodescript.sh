@@ -206,18 +206,14 @@ masternodeprivkey='$key'
 masternode=1
 
 #addnodes
-addnode=51.158.72.177
-addnode=51.15.224.33
-addnode=51.15.254.91
-addnode=159.69.188.123
-addnode=95.216.166.46
-addnode=95.216.191.165
-addnode=95.216.188.154
-addnode=x73pexnfmsnbhmea.onion:6520
-addnode=fiyylquk6ujdl6io.onion:6520
-addnode=5bozrozfrdmn6fws.onion:6520
-addnode=ukbd5bedakhsc4wj.onion:6520
-addnode=cssqmp3pl4ujm3zd.onion:6520
+addnode=108.61.89.77
+addnode=207.246.120.32
+addnode=72.74.34.120
+addnode=173.199.70.251
+addnode=45.33.69.198
+addnode=176.58.109.69
+addnode=5.79.88.130
+addnode=139.162.73.67
 ' | sudo -E tee /home/masternode/.wire/wire.conf
 sudo chown -R masternode:masternode /home/masternode/.wire
 
