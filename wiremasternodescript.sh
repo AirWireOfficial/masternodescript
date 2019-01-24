@@ -223,8 +223,8 @@ echo && echo "Downloading lastest blockchain snapshot"
 
 wget https://github.com/AirWireOfficial/wire-core/releases/download/1.3.0/snapshot.tar.gz
 tar zxvf ./snapshot.tar.gz
-mv ./blocks/ /home/masternode/.wire/
-mv ./chainstate/ /home/masternode/.wire/
+sudo mv ./blocks/ /home/masternode/.wire/
+sudo mv ./chainstate/ /home/masternode/.wire/
 rm ./snapshot.tar.gz
 
 sudo chown -R masternode:masternode /home/masternode/.wire
