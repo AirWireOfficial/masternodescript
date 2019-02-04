@@ -166,7 +166,7 @@ echo && echo "Firewall installed and enabled!"
 
 
 # Download WIRE
-echo && echo "Downloading v1.3 WIRE binary and installing"
+echo && echo "Downloading v1.4 WIRE binary and installing"
 sleep 1
 if [[ ("$UVER" == "16") ]]; then
     wget https://github.com/AirWireOfficial/wire-core/files/2800487/wire-linux.zip
@@ -221,7 +221,7 @@ addnode=139.162.73.67
 # Download Snapshot
 echo && echo "Downloading lastest blockchain snapshot"
 
-wget https://github.com/AirWireOfficial/wire-core/releases/download/1.3.0/snapshot.tar.gz
+wget https://github.com/AirWireOfficial/wire-core/releases/download/1.4.0/snapshot.tar.gz
 tar zxvf ./snapshot.tar.gz
 sudo mv ./blocks/ /home/masternode/.wire/
 sudo mv ./chainstate/ /home/masternode/.wire/
