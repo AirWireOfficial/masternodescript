@@ -35,7 +35,7 @@ chmod +x ./wire-tx
 
 echo && echo "Stopping WIRE daemon"
 
-if sudo service wired status | grep -Fq 'could not be found'; then
+if service wired status | grep -q 'could not be found'; then
     echo && echo "Detected manual install"
     wire-cli stop
 else
@@ -52,7 +52,7 @@ sudo mv ./wire-cli /usr/local/bin
 sudo mv ./wired /usr/local/bin
 sudo mv ./wire-tx /usr/local/bin
 
-if sudo service wired status | grep -Fq 'could not be found'; then
+if service wired status | grep -q 'could not be found'; then
     wired -daemon
 else
     sudo service wired start
