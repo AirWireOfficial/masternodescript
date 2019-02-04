@@ -35,12 +35,12 @@ chmod +x ./wire-tx
 
 echo && echo "Stopping WIRE daemon"
 
-if service --status-all | grep -Fq 'wired'; then
-    echo && echo "Detected systemd service"
-    sudo service wired stop
-else
+if sudo service wired status | grep -Fq 'could not be found'; then
     echo && echo "Detected manual install"
     wire-cli stop
+else
+    echo && echo "Detected systemd service"
+    sudo service wired stop
 fi
 
 
@@ -52,10 +52,10 @@ sudo mv ./wire-cli /usr/local/bin
 sudo mv ./wired /usr/local/bin
 sudo mv ./wire-tx /usr/local/bin
 
-if service --status-all | grep -Fq 'wired'; then
-    sudo service wired start
-else
+if sudo service wired status | grep -Fq 'could not be found'; then
     wired -daemon
+else
+    sudo service wired start
 fi
 
 echo && echo "WIRE 1.4 Update complete."
