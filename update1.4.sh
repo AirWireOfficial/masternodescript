@@ -1,3 +1,7 @@
+#/bin/bash
+
+# This script updates script and manual based WIRE masternode installs.
+
 UVER=18;
 #Check LSB release
 if [[ !($(lsb_release -d) == *16.04* || $(lsb_release -d) == *18.04*) ]]; then
