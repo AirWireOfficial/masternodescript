@@ -188,7 +188,7 @@ sudo mv ./wired /usr/local/bin
 sudo mv ./wire-tx /usr/local/bin
 
 # Create config for WIRE
-echo && echo "Configuring WIRE v1.3..."
+echo && echo "Configuring WIRE v1.4..."
 sleep 1
 rpcuser=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
 rpcpassword=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
