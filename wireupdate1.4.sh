@@ -48,6 +48,7 @@ sudo mv ./wire-cli /usr/local/bin
 sudo mv ./wired /usr/local/bin
 sudo mv ./wire-tx /usr/local/bin
 
-wired -daemon
+sudo service wired start
 
-echo && echo "WIRE 1.4 Update complete."
+echo && echo "WIRE 1.4 Update complete. You need to restart the masternode from the personal wallet. THEN, you need to log back in and restart the wallet by using this command..."
+echo && echo "sudo service wired restart"
