@@ -215,7 +215,7 @@ addnode=139.162.73.67
 # Download Snapshot
 echo && echo "Downloading lastest blockchain snapshot"
 
-wget https://github.com/AirWireOfficial/wire-core/releases/download/1.4.0/snapshot.tar.gz
+wget https://github.com/AirWireOfficial/masternodescript/releases/download/snapshot/snapshot.tar.gz
 tar zxvf ./snapshot.tar.gz
 sudo mv ./blocks/ /home/masternode/.wire/
 sudo mv ./chainstate/ /home/masternode/.wire/
