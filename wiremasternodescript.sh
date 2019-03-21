@@ -36,7 +36,7 @@ echo "* Need help? Join the WIRE Discord: https://discord.gg/2482aX        *"
 echo "*                                                                    *"
 echo "* Root or sudo access is required for installation!                  *"
 echo "*                                                                    *"
-echo "* S v1.2  W v1.4                              Created by Aron Schatz *"
+echo "* S v1.2  W v1.4.1                            Created by Aron Schatz *"
 echo "**********************************************************************"
 echo && echo && echo
 
@@ -57,7 +57,7 @@ echo "* Need help? Join the WIRE Discord: https://discord.gg/2482aX        *"
 echo "*                                                                    *"
 echo "* Root or sudo access is required for installation!                  *"
 echo "*                                                                    *"
-echo "* S v1.2  W v1.4                              Created by Aron Schatz *"
+echo "* S v1.2  W v1.4.1                            Created by Aron Schatz *"
 echo "**********************************************************************"
 echo && echo && echo
 
@@ -166,29 +166,23 @@ echo && echo "Firewall installed and enabled!"
 
 
 # Download WIRE
-echo && echo "Downloading v1.4 WIRE binary and installing"
+echo && echo "Downloading v1.4.1 WIRE binary and installing"
 sleep 1
-if [[ ("$UVER" == "16") ]]; then
-    wget https://github.com/AirWireOfficial/wire-core/files/2800487/wire-linux.zip
-    unzip wire-linux.zip
-else
-    wget https://github.com/AirWireOfficial/wire-core/releases/download/1.4.0/wire-linux-1.4-18.04.tar.gz
-    tar -xzvf ./wire-linux-1.4-18.04.tar.gz
-fi
+
+wget https://github.com/AirWireOfficial/wire-core/releases/download/1.4.1/wire-linux.zip
+unzip wire-linux.zip
 
 chmod +x ./wire-cli
 chmod +x ./wired
-chmod +x ./wire-tx
 
 # Install WIRE
 echo && echo "Installing WIRE..."
 sleep 1
 sudo mv ./wire-cli /usr/local/bin
 sudo mv ./wired /usr/local/bin
-sudo mv ./wire-tx /usr/local/bin
 
 # Create config for WIRE
-echo && echo "Configuring WIRE v1.4..."
+echo && echo "Configuring WIRE v1.4.1..."
 sleep 1
 rpcuser=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
 rpcpassword=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
@@ -221,7 +215,7 @@ addnode=139.162.73.67
 # Download Snapshot
 echo && echo "Downloading lastest blockchain snapshot"
 
-wget https://github.com/AirWireOfficial/wire-core/releases/download/1.4.0/snapshot.tar.gz
+wget https://github.com/AirWireOfficial/masternodescript/releases/download/snapshot/snapshot.tar.gz
 tar zxvf ./snapshot.tar.gz
 sudo mv ./blocks/ /home/masternode/.wire/
 sudo mv ./chainstate/ /home/masternode/.wire/
