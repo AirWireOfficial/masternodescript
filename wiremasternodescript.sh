@@ -36,7 +36,7 @@ echo "* Need help? Join the WIRE Discord: https://discord.gg/2482aX        *"
 echo "*                                                                    *"
 echo "* Root or sudo access is required for installation!                  *"
 echo "*                                                                    *"
-echo "* S v1.2  W v1.4.1                            Created by Aron Schatz *"
+echo "* S v1.2  W v1.4.2                            Created by Aron Schatz *"
 echo "**********************************************************************"
 echo && echo && echo
 
@@ -57,7 +57,7 @@ echo "* Need help? Join the WIRE Discord: https://discord.gg/2482aX        *"
 echo "*                                                                    *"
 echo "* Root or sudo access is required for installation!                  *"
 echo "*                                                                    *"
-echo "* S v1.2  W v1.4.1                            Created by Aron Schatz *"
+echo "* S v1.2  W v1.4.2                            Created by Aron Schatz *"
 echo "**********************************************************************"
 echo && echo && echo
 
@@ -166,23 +166,23 @@ echo && echo "Firewall installed and enabled!"
 
 
 # Download WIRE
-echo && echo "Downloading v1.4.1 WIRE binary and installing"
+echo && echo "Downloading v1.4.2 WIRE binary and installing"
 sleep 1
 
-wget https://github.com/AirWireOfficial/wire-core/releases/download/1.4.1/wire-linux.zip
-unzip wire-linux.zip
+wget https://github.com/AirWireOfficial/wire-core/releases/download/1.4.2/wire-1.4.2-x86_64-linux-gnu.tar.gz
+tar xvf ./wire-1.4.2-x86_64-linux-gnu.tar.gz
 
-chmod +x ./wire-cli
-chmod +x ./wired
+#chmod +x ./wire-cli
+#chmod +x ./wired
 
 # Install WIRE
 echo && echo "Installing WIRE..."
 sleep 1
-sudo mv ./wire-cli /usr/local/bin
-sudo mv ./wired /usr/local/bin
+sudo mv ./wire-1.4.2/bin/wire-cli /usr/local/bin
+sudo mv ./wire-1.4.2/bin/wired /usr/local/bin
 
 # Create config for WIRE
-echo && echo "Configuring WIRE v1.4.1..."
+echo && echo "Configuring WIRE v1.4.2..."
 sleep 1
 rpcuser=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
 rpcpassword=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
