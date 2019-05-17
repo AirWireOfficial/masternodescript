@@ -200,16 +200,6 @@ maxconnections=256
 externalip='$ip'
 masternodeprivkey='$key'
 masternode=1
-
-#addnodes
-addnode=108.61.89.77
-addnode=207.246.120.32
-addnode=72.74.34.120
-addnode=173.199.70.251
-addnode=45.33.69.198
-addnode=176.58.109.69
-addnode=5.79.88.130
-addnode=139.162.73.67
 ' | sudo -E tee /home/masternode/.wire/wire.conf
 
 # Download Snapshot
