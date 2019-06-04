@@ -169,8 +169,8 @@ echo && echo "Firewall installed and enabled!"
 echo && echo "Downloading v1.4.2 WIRE binary and installing"
 sleep 1
 
-wget https://github.com/AirWireOfficial/wire-core/releases/download/1.4.2/wire-1.4.2-x86_64-linux-gnu.tar.gz
-tar xvf ./wire-1.4.2-x86_64-linux-gnu.tar.gz
+wget https://github.com/AirWireOfficial/wire-core/releases/download/1.4.3/wire-1.4.3-x86_64-linux-gnu.tar.gz
+tar xvf ./wire-1.4.3-x86_64-linux-gnu.tar.gz
 
 #chmod +x ./wire-cli
 #chmod +x ./wired
@@ -178,8 +178,8 @@ tar xvf ./wire-1.4.2-x86_64-linux-gnu.tar.gz
 # Install WIRE
 echo && echo "Installing WIRE..."
 sleep 1
-sudo mv ./wire-1.4.2/bin/wire-cli /usr/local/bin
-sudo mv ./wire-1.4.2/bin/wired /usr/local/bin
+sudo mv ./wire-1.4.3/bin/wire-cli /usr/local/bin
+sudo mv ./wire-1.4.3/bin/wired /usr/local/bin
 
 # Create config for WIRE
 echo && echo "Configuring WIRE v1.4.2..."
