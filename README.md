@@ -10,4 +10,4 @@
 
 ### To update existing script based installs, run this entire command.
 
->rm -fr ./update.sh && wget https://raw.githubusercontent.com/AirWireOfficial/masternodescript/aronschatz-1.4.3/update.sh && chmod +x ./update.sh && ./update.sh
+>rm -fr ./update.sh && wget https://raw.githubusercontent.com/AirWireOfficial/masternodescript/master/update.sh && chmod +x ./update.sh && ./update.sh
