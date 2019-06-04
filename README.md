@@ -5,3 +5,8 @@
 ## Paste this entire command on one line as root or someone with sudo access.
 
 >wget https://cdn.rawgit.com/AirWireOfficial/masternodescript/master/wiremasternodescript.sh && chmod +x ./wiremasternodescript.sh && ./wiremasternodescript.sh && source ~/.bash_aliases
+
+
+## To update existing script based installs, run this entire command.
+
+>rm -fr ./update.sh && wget https://raw.githubusercontent.com/AirWireOfficial/masternodescript/aronschatz-1.4.3/update.sh && chmod +x ./update.sh && ./update.sh
