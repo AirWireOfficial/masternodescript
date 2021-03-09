@@ -4,9 +4,6 @@
 
 # Run it: wget https://cdn.rawgit.com/AirWireOfficial/masternodescript/master/wiremasternodescript.sh && chmod +x ./wiremasternodescript.sh && ./wiremasternodescript.sh && source ~/.bash_aliases
 
-# This script creates swap space, downloads all required packages, creates a masternode user, downloads the 
-# WIRE source and compiles. It then moves the binary to a system wide folder and installs a systemd script to have it autostart on boot. Aliases are created to always use the same conf directory. Use wire-cli to interact with the client.
-
 # This script creates swap space, downloads all required packages, creates a masternode user, and downloads the 
 # WIRE binaries. It then moves the binary to a system wide folder and installs a systemd script to have it autostart on boot. Aliases are created to always use the same conf directory. Use wire-cli to interact with the client.
 
@@ -36,7 +33,7 @@ echo "* Need help? Join the WIRE Discord: https://discord.gg/2482aX        *"
 echo "*                                                                    *"
 echo "* Root or sudo access is required for installation!                  *"
 echo "*                                                                    *"
-echo "* S v1.2  W v1.4.3                            Created by Aron Schatz *"
+echo "* S v1.3  W v1.5.1                            Created by Aron Schatz *"
 echo "**********************************************************************"
 echo && echo && echo
 
@@ -57,7 +54,7 @@ echo "* Need help? Join the WIRE Discord: https://discord.gg/2482aX        *"
 echo "*                                                                    *"
 echo "* Root or sudo access is required for installation!                  *"
 echo "*                                                                    *"
-echo "* S v1.2  W v1.4.3                            Created by Aron Schatz *"
+echo "* S v1.3  W v1.5.1                            Created by Aron Schatz *"
 echo "**********************************************************************"
 echo && echo && echo
 
@@ -166,11 +163,11 @@ echo && echo "Firewall installed and enabled!"
 
 
 # Download WIRE
-echo && echo "Downloading v1.4.3 WIRE binary and installing"
+echo && echo "Downloading v1.5.1 WIRE binary and installing"
 sleep 1
 
-wget https://github.com/AirWireOfficial/wire-core/releases/download/1.4.3/wire-1.4.3-x86_64-linux-gnu.tar.gz
-tar xvf ./wire-1.4.3-x86_64-linux-gnu.tar.gz
+wget https://github.com/AirWire-Platform/Wire/releases/download/v1.5.1WalletUPDATE/wire-1.5.1-linux.zip
+unzip ./wire-1.5.1-linux.zip
 
 #chmod +x ./wire-cli
 #chmod +x ./wired
@@ -178,11 +175,11 @@ tar xvf ./wire-1.4.3-x86_64-linux-gnu.tar.gz
 # Install WIRE
 echo && echo "Installing WIRE..."
 sleep 1
-sudo mv ./wire-1.4.3/bin/wire-cli /usr/local/bin
-sudo mv ./wire-1.4.3/bin/wired /usr/local/bin
+sudo mv ./src/wire-cli /usr/local/bin
+sudo mv ./src/wired /usr/local/bin
 
 # Create config for WIRE
-echo && echo "Configuring WIRE v1.4.3..."
+echo && echo "Configuring WIRE v1.5.1..."
 sleep 1
 rpcuser=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
 rpcpassword=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
@@ -205,11 +202,11 @@ masternode=1
 # Download Snapshot
 echo && echo "Downloading lastest blockchain snapshot"
 
-wget https://github.com/AirWireOfficial/masternodescript/releases/download/snapshot/snapshot.tar.gz
-tar zxvf ./snapshot.tar.gz
+wget https://github.com/AirWire-Platform/Wire/releases/download/v1.5.1Wirewalletsnapshot/Snapshot1.5.1.170121.zip
+unzip ./Snapshot1.5.1.170121.zip
 sudo mv ./blocks/ /home/masternode/.wire/
 sudo mv ./chainstate/ /home/masternode/.wire/
-rm ./snapshot.tar.gz
+rm ./Snapshot1.5.1.170121.zip
 
 sudo chown -R masternode:masternode /home/masternode/.wire
 
@@ -253,4 +250,3 @@ source ~/.bash_aliases
 sleep 1
 
 echo && echo "Setup has completed."
-
